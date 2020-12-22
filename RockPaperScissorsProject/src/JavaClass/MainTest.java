@@ -21,7 +21,6 @@ public class Main {
         listPlayers.addList(player2);
         listPlayers.addList(player3);
 
-
         Match match = new Match(player1 , player2);
 
         player1.setNowWeapon(rock);
@@ -39,7 +38,6 @@ public class Main {
         if(match.endMatch()){
             System.out.println(match.getChampion());
         }
-
 
         match.startMatch();
         if(match.endMatch()){
