@@ -1,8 +1,9 @@
-package Weapons;
+package JavaClass.Weapons;
 
 import java.awt.image.BufferedImage;
+import java.io.Serializable;
 
-public class Weapon {
+public class Weapon implements Serializable {
     private int ID;
     private int opponentWinID;
     private int opponentLoseID;
@@ -32,11 +33,16 @@ public class Weapon {
     }
     @Override
     public String toString() {
-        return "Weapon.weapon{" +
-                "ID=" + ID +
-                ", opponentWinID=" + opponentWinID +
-                ", opponentLoseID=" + opponentLoseID +
-                ", image=" + image +
-                '}';
+        StringBuilder s = new StringBuilder();
+        switch (ID){
+            case 0 : s.append("Rock");
+                    break;
+            case 1 : s.append("Paper");
+                break;
+            case 2 : s.append("Scissor");
+                break;
+
+        }
+        return s.toString();
     }
 }

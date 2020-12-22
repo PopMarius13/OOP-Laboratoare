@@ -1,17 +1,21 @@
-import Games.Match;
-import Players.ListPlayers;
-import Players.Player;
-import Weapons.Paper;
-import Weapons.Rock;
-import Weapons.Scissors;
+package JavaClass;
 
-public class Main {
+import JavaClass.Games.Match;
+import JavaClass.Players.ListPlayers;
+import JavaClass.Players.Player;
+import JavaClass.Weapons.Paper;
+import JavaClass.Weapons.Rock;
+import JavaClass.Weapons.Scissors;
 
-    public static void main(String[] args) {
+import java.io.IOException;
+
+public class MainTest {
+
+    public static void main(String[] args) throws IOException {
         ListPlayers listPlayers = new ListPlayers();
-        Player player1 = new Player("Marius");
-        Player player2 = new Player("Ionut");
-        Player player3 = new Player("Pop");
+        Player player1 = new Player("Mar1" , "mar1");
+        Player player2 = new Player("Ion1" , "ion1");
+        Player player3 = new Player("Pop1" , "pop1");
 
         Rock rock = new Rock(null);
         Paper paper = new Paper(null);
@@ -48,5 +52,10 @@ public class Main {
         System.out.println(player2);
 
         System.out.println(listPlayers);
+//
+        ListPlayers.storePlayers();
+//        ListPlayers listPlayers = new ListPlayers();
+//        ListPlayers.loadPlayers();
+//        System.out.println(listPlayers);
     }
 }

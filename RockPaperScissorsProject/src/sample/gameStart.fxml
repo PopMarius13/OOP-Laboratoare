@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.geometry.Insets?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="sample.gameStart"
+            prefHeight="400.0" prefWidth="600.0" stylesheets="@styles.css"
+            fx:id="pane">
+    <top>
+
+        <VBox spacing="20" alignment="CENTER">
+            <Label text="Choose Weapon" alignment="CENTER" style=" -fx-text-fill: #0073e6; -fx-font-size: 21pt ;" >
+            </Label>
+        <HBox spacing="50" alignment="CENTER" >
+            <VBox>
+                <ImageView fx:id="rock" onMouseClicked="#handleClickRock">
+
+                </ImageView>
+                <HBox spacing="10" alignment="CENTER" >
+                <RadioButton fx:id="rockB" onMouseClicked="#handleClickRock">
+
+                </RadioButton>
+                    <Label text="Rock"/>
+                </HBox>
+            </VBox>
+            <VBox>
+                <ImageView fx:id="paper" onMouseClicked="#handleClickPaper">
+
+                </ImageView>
+                <HBox spacing="10" alignment="CENTER">
+                <RadioButton fx:id="paperB" onMouseClicked="#handleClickPaper">
+                </RadioButton>
+                    <Label text="Paper"/>
+                </HBox>
+            </VBox>
+            <VBox>
+                <ImageView fx:id="scissors" onMouseClicked="#handleClickScissors">
+
+                </ImageView>
+                <HBox spacing="10" alignment="CENTER">
+                <RadioButton fx:id="scissorsB" onMouseClicked="#handleClickScissors">
+
+                </RadioButton>
+                    <Label text="Scissors"/>
+                </HBox>
+            </VBox>
+            <BorderPane.margin >
+                <Insets top="20"/>
+            </BorderPane.margin>
+
+        </HBox>
+            <BorderPane.margin>
+                <Insets top="20"/>
+            </BorderPane.margin>
+        </VBox>
+    </top>
+
+    <center>
+        <HBox spacing="50" alignment="CENTER">
+            <Label text="My Score:" fx:id="score" style="-fx-font-size: 25pt ;"/>
+            <VBox spacing="20" alignment="CENTER">
+                <Button text="Start" onAction="#handleClickStart"/>
+                <Button text="Back" onAction="#handleClickBack"/>
+            </VBox>
+
+        </HBox>
+    </center>
+<right>
+    <VBox maxWidth="200">
+        <Label text="My Matches:" >
+            <VBox.margin>
+                <Insets right="30.0" top="20"/>
+            </VBox.margin></Label>
+        <ListView VBox.vgrow="ALWAYS" fx:id="games">
+            <VBox.margin>
+                <Insets bottom="20.0" right="10.0" />
+            </VBox.margin></ListView>
+    </VBox>
+</right>
+    <bottom>
+        <HBox spacing="70" style="-fx-background-color: #FFFFFF;">
+            <Label text="Game: RockPaperScissors" style=" -fx-text-fill: #000000; -fx-font-size: 10pt ;"/>
+            <Label text="Software Engineer: Pop Marius-Ionut" style=" -fx-text-fill: #000000; -fx-font-size: 10pt ;"/>
+            <Label text="Company: PMI13" style=" -fx-text-fill: #000000; -fx-font-size: 10pt ;"/>
+            <padding>
+                <Insets left="5.0" />
+            </padding>
+        </HBox>
+    </bottom>
+</BorderPane>

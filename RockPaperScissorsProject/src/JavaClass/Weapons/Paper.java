@@ -1,4 +1,4 @@
-package Weapons;
+package JavaClass.Weapons;
 
 import java.awt.image.BufferedImage;
 
@@ -20,10 +20,5 @@ public class Paper extends Weapon {
         return -1;
     }
 
-    @Override
-    public String toString() {
-        return "Paper{" +
-                "name='" + name + '\'' +
-                '}';
-    }
+
 }

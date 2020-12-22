@@ -1,6 +1,7 @@
-package Games;
+package JavaClass.Games;
 
-import Players.Player;
+
+import JavaClass.Players.Player;
 
 public class Match {
     private Player player1;

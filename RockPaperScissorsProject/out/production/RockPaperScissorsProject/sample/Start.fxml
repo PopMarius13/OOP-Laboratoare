@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="pane" prefHeight="400.0" prefWidth="600.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Start">
+    <top>
+        <VBox alignment="CENTER">
+            <Label alignment="CENTER" style=" -fx-text-fill: #0073e6; -fx-font-size: 25pt ;" text="Rock Paper Scissors" />
+        </VBox>
+    </top>
+    <left>
+        <VBox maxWidth="250">
+            <Label text="Players:">
+                <VBox.margin>
+                    <Insets left="10.0" />
+                </VBox.margin></Label>
+            <ListView fx:id="players" VBox.vgrow="ALWAYS">
+            <VBox.margin>
+               <Insets bottom="20.0" left="10.0" />
+            </VBox.margin></ListView>
+         <BorderPane.margin>
+            <Insets top="10.0" />
+         </BorderPane.margin>
+        </VBox>
+    </left>
+
+    <right>
+        <VBox maxWidth="250">
+            <Label text="My Matches:">
+                <VBox.margin>
+                    <Insets right="30.0" />
+                </VBox.margin></Label>
+            <ListView fx:id="matches" VBox.vgrow="ALWAYS">
+            <VBox.margin>
+               <Insets bottom="20.0" right="10.0" />
+            </VBox.margin></ListView>
+         <BorderPane.margin>
+            <Insets top="10.0" />
+         </BorderPane.margin>
+        </VBox>
+    </right>
+    <center>
+        <VBox alignment="CENTER" prefWidth="400" spacing="20">
+            <Label fx:id="playerLabel" style="-fx-font-size: 20pt;"/>
+            <Button onAction="#handleClickPlay" text="Play">
+
+            </Button>
+            <Button onAction="#handleClickSignOut" text="Sign Out">
+
+            </Button>
+            <BorderPane.margin>
+                <Insets bottom="20.0" left="40.0" right="40.0" top="20.0" />
+            </BorderPane.margin>
+        </VBox>
+    </center>
+
+
+    <bottom>
+        <HBox spacing="70" style="-fx-background-color: #FFFFFF;">
+            <Label style=" -fx-text-fill: #000000; -fx-font-size: 10pt ;" text="Game: RockPaperScissors" />
+            <Label style=" -fx-text-fill: #000000; -fx-font-size: 10pt ;" text="Software Engineer: Pop Marius-Ionut" />
+            <Label style=" -fx-text-fill: #000000; -fx-font-size: 10pt ;" text="Company: PMI13" />
+            <padding>
+                <Insets left="5.0" />
+            </padding>
+        </HBox>
+    </bottom>
+</BorderPane>

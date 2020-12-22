@@ -1,23 +1,32 @@
-package Players;
+package JavaClass.Players;
 
-import Games.Game;
-import Weapons.Paper;
-import Weapons.Rock;
-import Weapons.Scissors;
-import Weapons.Weapon;
+
+import JavaClass.Games.Game;
+import JavaClass.Weapons.Paper;
+import JavaClass.Weapons.Rock;
+import JavaClass.Weapons.Scissors;
+import JavaClass.Weapons.Weapon;
 
 import java.awt.image.BufferedImage;
+import java.io.Serializable;
 import java.util.LinkedList;
 
-public class Player implements Comparable<Player>{
+public class Player implements Serializable , Comparable<Player>{
     private final String name;
+    private String password = null;
     private final LinkedList<Game> historyGames = new LinkedList<>();
     private Weapon nowWeapon;
     private int score;
     private int id = 0;
 
-    public Player(String name) {
-        this(name , null);
+    public Player(String name, String password) {
+        this.name = name;
+        this.password = password;
+    }
+
+    public Player(String name, int score) {
+        this.name = name;
+        this.score = score;
     }
 
     public Player(String name, Weapon nowWeapon) {
@@ -26,28 +35,31 @@ public class Player implements Comparable<Player>{
         this.score = 0;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public void chooseWeapon (int id , BufferedImage image){
-        Weapon weapon;
+        Weapon weapon = null;
+
         if(id == 0)
             weapon = new Paper(image);
         else if(id == 1)
             weapon = new Rock( image);
-        else
+        else if(id == 2)
             weapon = new Scissors(image);
+
         this.setNowWeapon(weapon);
     }
-    @Override
-    public int compareTo(Player o) {
-        if(o.getScore() > this.score)
-            return 1;
-        if(o.getScore() < this.score)
-            return  -1;
-        return 0;
-    }
 
-    public void sortList(){
-        historyGames.sort(Game::compareTo);
-    }
 
     public int getId() {
         return id;
@@ -60,6 +72,7 @@ public class Player implements Comparable<Player>{
     public int getScore() {
         return score;
     }
+
 
     public LinkedList<Game> getHistoryGames() {
         return historyGames;
@@ -88,11 +101,16 @@ public class Player implements Comparable<Player>{
 
     @Override
     public String toString() {
-        return "Player{" +
-                "name='" + name  +
-                ", score = " + score +
-                ",\n historyGames=" + historyGames +
-                ",\n nowWeapon=" + nowWeapon +
-                '}';
+        return name  + "\t\tScore:  " + score;
+    }
+
+
+    @Override
+    public int compareTo(Player o) {
+        if(o.getScore() > getScore())
+            return 1;
+        if(o.getScore() == getScore())
+            return getName().compareTo(o.getName());
+       return -1;
     }
 }

@@ -1,9 +1,11 @@
-package Games;
+package JavaClass.Games;
 
 
-import Weapons.Weapon;
+import JavaClass.Weapons.Weapon;
 
-public class Game implements  Comparable<Game>{
+import java.io.Serializable;
+
+public class Game implements Serializable {
     private int ID;
     private String result;
     private Weapon myWeapon;
@@ -16,14 +18,7 @@ public class Game implements  Comparable<Game>{
         this.opponentWeapon = opponentWeapon;
     }
 
-    @Override
-    public int compareTo(Game o) {
-        if(this.ID < o.ID)
-            return 1;
-        else if(this.ID > o.ID)
-            return -1;
-        return 0;
-    }
+
 
     public int getID() {
         return ID;
@@ -59,11 +54,7 @@ public class Game implements  Comparable<Game>{
 
     @Override
     public String toString() {
-        return "Game{" +
-                "ID=" + ID +
-                ", result='" + result + '\'' +
-                ", myWeapon=" + myWeapon +
-                ", opponentWeapon=" + opponentWeapon +
-                '}';
+        return ID + ") "  + result + "\nMy Weapon: " +  myWeapon.toString() +
+                "\nOpponent Weapon: " + opponentWeapon.toString();
     }
 }
